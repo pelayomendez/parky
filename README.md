@@ -2,7 +2,7 @@
 
 A minimal <b>long term tabs retention browser</b>. Keep all that documentation tabs that you need from time to time <b>isolated from your usual browser on your tray bar</b> and avoid living in the browser tab hell.
 
-![Preview](screenshot.png)
+![](https://github.com/pelayomendez/parky/blob/master/screenshot.PNG)
 
 ## To use
 
