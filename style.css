@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*,*::before,*::after
+{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body
+{
+	font:14px/1.5 'Open Sans',sans-serif;
+	color:#345;
+	background:#f0f2f4;
+
+	overflow: hidden;
+}
+
+html, body {
+   width: 100%;
+   height: 100vh;
+   margin: 0;
+   padding: 0;
+}
+
+/* TOP BAR */
+
+.topbar 
+{
+  height: 50px;
+  width: 100%;
+  background-color: #f0f2f4; 
+
+  position: absolute;
+  top:0;
+  left:0;
+
+  padding-top: 10px;
+  padding-left: 10px;
+
+  cursor: pointer;
+}
+
+.topbar__button 
+{
+  width:30px;
+  height:30px;
+  
+  background-color: #ddd;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  
+  z-index:1000;
+
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+
+  cursor: default;
+  -webkit-app-region: no-drag
+}
+
+.topbar__button--active
+{
+  cursor: pointer;
+  background-color:#345;
+}
+
+.topbar__button--active:hover 
+{
+  color: #789;
+  background-color: #ddd;
+}
+
+.topbar__iconleft
+{
+  font-size: 16px!important;
+  margin-top: 8px;
+  margin-left: -4px;
+}
+
+.topbar__iconright
+{
+  font-size: 16px!important;
+  margin-top: 8px;
+  margin-left: 4px;
+}
+
+/* TABS */
+
+p:not(:last-child) {
+  margin: 0 0 0px;
+}
+
+nav {
+  /*max-width: 800px;*/
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+
+  margin-top: 50px;
+}
+
+section 
+{
+  width: 100%;
+  height: -webkit-calc(100% - 90px);
+  display: none;
+  padding: 0px;
+  border-top: 1px solid #abc;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600; 
+  text-align: center;
+  color: #abc;
+  border: 1px solid transparent;
+}
+
+label img {
+	width: 20px;
+	margin-right: 10px;
+	float: left;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+/*
+label[for*='1']:before { content: '\f1cb'; }
+label[for*='2']:before { content: '\f17d'; }
+label[for*='3']:before { content: '\f16c'; }
+label[for*='4']:before { content: '\f171'; }
+*/
+
+label:hover {
+  color: #789;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #0af;
+  border: 1px solid #abc;
+  border-top: 2px solid #0af;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  label {
+    padding: 15px;
+  }
+}
+
+
+/* Floating icons menu */
+
+.float
+{
+  position:fixed;
+  width:50px;
+  height:50px;
+  bottom:50px;
+  right:50px;
+  background-color:#345;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+  z-index:1000;
+  animation: bot-to-top 2s ease-out;
+}
+
+.float:hover
+{
+  background-color: #ddd;
+}
+
+.float .float_icon {
+  font-size: 22px!important;
+  margin-top: 15px;
+  animation: rotate-in 0.5s;
+}
+
+.float:hover > .float_icon
+{
+  animation: rotate-out 0.5s;
+}
+
+.float + .menu
+{
+  animation: 2.0s delayedHide;
+  animation-fill-mode: forwards;
+}
+
+.float:hover + .menu
+{
+
+  visibility: visible;
+  animation: scale-in 0.5s;
+}
+
+.menu 
+{
+  position:fixed;
+  right:50px;
+  padding-bottom:20px;
+  bottom:80px;
+  z-index:100;
+}
+
+.menu__item
+{
+  list-style:none;
+  margin-bottom:10px;
+}
+
+.menu__link
+{
+  background-color:#345;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+  width:50px;
+  height:50px;
+  display:block;
+}
+
+.menu__link:hover 
+{
+  background-color: #ddd;
+  color: #789;
+}
+
+.menu:hover .menu__link
+{
+  visibility:visible!important;
+  opacity:1!important;
+}
+
+.menu__icon
+{
+  font-size: 22px!important;
+  margin-top: 15px;
+}
+
+
+@keyframes bot-to-top {
+    0%   {bottom:-40px}
+    50%  {bottom:40px}
+}
+
+@keyframes scale-in {
+    from {transform: scale(0);opacity: 0;}
+    to {transform: scale(1);opacity: 1;}
+}
+
+@keyframes rotate-in {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotate-out {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
+
+@keyframes delayedHide {
+  99% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.prompt input 
+{
+  min-width: 270px;
+  display: block;
+}

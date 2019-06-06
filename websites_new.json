@@ -1,0 +1,20 @@
+{
+  "websites": [
+    {
+      "name": "Electron",
+      "url": "https://electronjs.org/docs"
+    },
+    {
+      "name": "Vue",
+      "url": "https://vuejs.org/v2/guide/"
+    },
+    {
+      "name": "Nuxt.js",
+      "url": "https://nuxtjs.org/api"
+    },
+    {
+      "name": "Google",
+      "url": "http://www.google.com"
+    }
+  ]
+}

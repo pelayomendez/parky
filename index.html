@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <title>Parky (BETA)</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <div id="topbar" class="topbar">
+         <a href="#" id="js__navBack" class="topbar__button"><i class="topbar__iconleft fa fa-chevron-left"></i></a>
+         <a href="#" id="js__navFoward" class="topbar__button"><i class="topbar__iconright fa fa-chevron-right"></i></a>
+      </div>
+      <nav id="main"></nav>
+      <a class="float" id="menu-share" href="#">
+         <i class="float_icon fa fa-share my-float"></i>
+      </a>
+      <ul class="menu">
+         <li class="menu__item"><a id="js__addItem"    class="menu__link" href="#"><i class="menu__icon fa fa-plus"></i></a></li>
+         <li class="menu__item"><a id="js__deleteItem" class="menu__link" href="#"><i class="menu__icon fa fa-trash"></i></a></li>
+      </ul>
+      <script>
+         require('./renderer.js')
+      </script>
+   </body>
+</html>
